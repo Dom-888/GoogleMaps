@@ -39,6 +39,8 @@ function repoInformationHTML(repos) { //The Argument is 'repoData'
 }
 
 function fetchGitHubInformation(event) {
+    $("#gh-user-data").html(""); //An empty string set as default prevent the output box not being cleared when the input form is empty
+    $("#gh-repo-data").html("");
 
     var username = $("#gh-username").val();
     if (!username) {
@@ -72,3 +74,5 @@ function fetchGitHubInformation(event) {
             }
         });
 }
+
+$(document).ready(fetchGitHubInformation); //Trigger the function as soon the page is loaded
